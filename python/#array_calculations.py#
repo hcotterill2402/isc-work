@@ -1,0 +1,37 @@
+
+import numpy as np
+
+#1
+
+a=np.array([range(4), range(10,14)])
+b=np.array([2, -1, 1, 0])
+
+ab=a*b       #multiplies elementally - does this even though they aren't same
+print a      #dimensions - uses 'broadcasting' feature
+print b
+print ab
+
+b1=b*100
+b2=b*100.0
+print b1
+print b2
+
+print b1==b2
+print b1.dtype   #int64
+print b2.dtype   #float64
+
+#2
+
+arr=np.array(range(10))
+
+print arr < 3        # 2 different ways to print whether the element is < 3
+print np.less(arr,3)
+
+arr2=np.logical_or(arr < 3, arr > 8) #produces array with True when condition 
+#print arr2                          #is satisfied
+answer=np.where(arr2, arr*5, arr*-5 )#do arr*5 where true, arr*-5 where false
+
+print answer 
+
+#3
+
